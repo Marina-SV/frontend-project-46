@@ -4,3 +4,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/5b4270e0eeb36209de26/maintainability)](https://codeclimate.com/github/Marina-SV/frontend-project-46/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5b4270e0eeb36209de26/test_coverage)](https://codeclimate.com/github/Marina-SV/frontend-project-46/test_coverage)
+
+[![asciicast](https://asciinema.org/a/cqO9yUdQI9HCqinGkLwg3QRcB.svg)](https://asciinema.org/a/cqO9yUdQI9HCqinGkLwg3QRcB)

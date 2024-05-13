@@ -1,5 +1,5 @@
 import { program } from 'commander';
-import parseFile from './src/parseFile.js';
+import genDiff from './src/genDiff.js';
 
 export default () => {
   program
@@ -10,10 +10,8 @@ export default () => {
     .arguments('<filepath1> <filepath2>')
     .option('-f, --format [type]', 'output format')
     .action((filepath1, filepath2) => {
-      const data1 = parseFile(filepath1);
-      const data2 = parseFile(filepath2);
-      console.log(data1);
-      console.log(data2)
+      const diff = genDiff(filepath1, filepath2);
+      console.log(JSON.stringify(diff, null, 4));
     });
   program.parse();
 };

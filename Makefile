@@ -12,3 +12,9 @@ lint:
 
 lint-fix:
 	npx eslint . --fix
+
+test:
+	npx jest
+
+run:
+	gendiff ./__fixtures__/file1.json ./__fixtures__/file2.json

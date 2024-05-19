@@ -1,16 +1,16 @@
 import { readFileSync } from 'node:fs';
-import { extname, resolve } from 'node:path';
-import { cwd } from 'node:process';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 export default (pathToFile) => {
-  const extension = extname(pathToFile).slice(1);
+  // const extension = extname(pathToFile).slice(1);
 
   function constructAbsolutePath(originalPath) {
-    const workingDirPath = cwd();
-    const absolutePath = resolve(originalPath, workingDirPath);
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
 
-    if (originalPath === absolutePath) {
-      return absolutePath;
+    if (originalPath === __dirname) {
+      return __dirname;
     }
     return originalPath;
   }
@@ -18,7 +18,5 @@ export default (pathToFile) => {
   const absolutePathToFile = constructAbsolutePath(pathToFile);
   const rowData = readFileSync(absolutePathToFile, 'utf8');
 
-  if (extension === 'json') {
-    return JSON.parse(rowData);
-  }
+  return JSON.parse(rowData);
 };

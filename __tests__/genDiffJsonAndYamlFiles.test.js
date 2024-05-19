@@ -8,9 +8,9 @@ const __dirname = dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-test('genDiff', () => {
+test('genDiffJsonFiles', () => {
   const file1Path = getFixturePath('file1.json');
-  const file2Path = getFixturePath('file2.json');
+  const file2Path = getFixturePath('file2.yaml');
   const diff = genDiff(file1Path, file2Path);
   expect(diff).toEqual({
     '- follow': false,

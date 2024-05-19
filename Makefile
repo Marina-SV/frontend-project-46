@@ -16,5 +16,8 @@ lint-fix:
 test:
 	npx jest
 
-run:
+runJSON:
 	gendiff ./__fixtures__/file1.json ./__fixtures__/file2.json
+
+runYAML:
+	gendiff ./__fixtures__/file1.yaml ./__fixtures__/file2.yaml
